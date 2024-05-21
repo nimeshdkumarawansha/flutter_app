@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/component/color.dart';
+import 'package:flutter_app/components/color.dart';
 import 'package:flutter_app/onboarding/onboarding_items.dart';
 import 'package:flutter_app/pages/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';

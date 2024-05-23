@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_app/pages/Auth/register.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,10 +11,16 @@ class Home extends StatelessWidget {
       body: Center(
         child: TextButton(
           onPressed: () async {
-            final press = await SharedPreferences.getInstance();
-            press.setBool("onBoarding", false);
+            // final press = await SharedPreferences.getInstance();
+            // press.setBool("onBoarding", false);
+
+             Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Register(),
+                ));
           },
-          child: const Text("Enable Onboarding"),
+          child: const Text("Register Page"),
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/api/api_calls.dart';
+import 'package:flutter_app/components/color.dart';
 import 'package:flutter_app/components/my_button.dart';
 import 'package:flutter_app/components/my_textfield.dart';
 import 'package:flutter_app/pages/Auth/login.dart';
@@ -106,7 +107,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     // UI code as before
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kGrayColor,
       body: Center(
         child: SingleChildScrollView(
           child: Column(

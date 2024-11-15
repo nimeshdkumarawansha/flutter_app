@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/api/api_calls.dart';
+import 'package:flutter_app/components/color.dart';
 import 'package:flutter_app/components/my_button.dart';
 import 'package:flutter_app/components/my_textfield.dart';
 import 'package:flutter_app/components/squre_tile.dart';
@@ -108,7 +109,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kGrayColor,
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -203,6 +204,9 @@ class _LoginState extends State<Login> {
                 children: [
                   // google button
                   SqureTile(onTap: () {}, imagePath: 'assets/google.png'),
+                  const SizedBox(width: 25),
+                  // facebook button
+                  SqureTile(onTap: () {}, imagePath: 'assets/facebook.png'),
                   const SizedBox(width: 25),
                   // apple Button
                   SqureTile(onTap: () {}, imagePath: 'assets/apple.png'),

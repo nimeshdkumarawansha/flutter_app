@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/Auth/otp_screen.dart';
-import 'package:flutter_app/pages/Auth/register.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
+
+import '../components/color.dart';
+import '../widgets/search_bar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,40 +9,42 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: kGrayColor, // Dark background color
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              // "Menu" text with Icon
+              Row(
+                children: [
+                  const Icon(Icons.menu, color: Colors.white),
+                  const SizedBox(width: 8),
+                  const Text(
+                    "Menu",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ],
+              ),
+              const Spacer(), // Pushes the logo to the right
+              Image.asset(
+                'assets/images/logo/logo.png',
+                height: 30,
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextButton(
-            onPressed: () async {
-              // final press = await SharedPreferences.getInstance();
-              // press.setBool("onBoarding", false);
-
-               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Register(),
-                  ));
-            },
-            child: const Text("Register Page"),
-          ),
-
-          TextButton(
-            onPressed: () async {
-
-               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const OTPScreen(),
-                  ));
-            },
-            child: const Text("OTP Screen"),
-          ),
+        children: const [
+          CustomSearchBar(),
         ],
       ),
     );
   }
 }
+
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_app/components/color.dart';

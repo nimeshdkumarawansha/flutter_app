@@ -5,11 +5,13 @@ import 'package:flutter_app/api/api_calls.dart';
 import 'package:flutter_app/components/color.dart';
 import 'package:flutter_app/components/my_button.dart';
 import 'package:flutter_app/components/my_textfield.dart';
-import 'package:flutter_app/components/squre_tile.dart';
 import 'package:flutter_app/pages/Auth/register.dart';
 import 'package:flutter_app/pages/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../utils/alerts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+import '../../components/square_tile.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -72,13 +74,13 @@ class _LoginState extends State<Login> {
       } else if (response.statusCode == 422) {
         // Close the loading dialog
         Navigator.pop(context);
-        
+
         var message = json.decode(response.body)['message'];
         Alerts.showMessage(context, message);
       } else {
         // Close the loading dialog
         Navigator.pop(context);
-        
+
         Alerts.showMessage(context, "Login failed");
       }
     } catch (e) {
@@ -119,7 +121,7 @@ class _LoginState extends State<Login> {
               // logo
               SizedBox(
                 height: 100,
-                child: Image.asset('assets/logo.png'),
+                child: Image.asset('assets/images/logo/logo.png'),
               ),
               const SizedBox(height: 50),
               // welcome back, you've been missed!
@@ -203,13 +205,15 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // google button
-                  SqureTile(onTap: () {}, imagePath: 'assets/google.png'),
+                  SquareTile(
+                      onTap: _handleGoogleSignIn,
+                      imagePath: 'assets/images/logo/google.png'),
                   const SizedBox(width: 25),
                   // facebook button
-                  SqureTile(onTap: () {}, imagePath: 'assets/facebook.png'),
+                  SquareTile(onTap: () {}, imagePath: 'assets/images/logo/facebook.png'),
                   const SizedBox(width: 25),
                   // apple Button
-                  SqureTile(onTap: () {}, imagePath: 'assets/apple.png'),
+                  SquareTile(onTap: () {}, imagePath: 'assets/images/logo/apple.png'),
                 ],
               ),
               const SizedBox(height: 20),
@@ -244,5 +248,26 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  final GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: ['email'],
+  );
+
+  Future<void> _handleGoogleSignIn() async {
+    try {
+      print('handle google sign in');
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
+
+      // Retrieve the ID token for backend authentication
+      final String idToken = googleAuth.idToken!;
+      print('idToken: $idToken');
+      // Call the Laravel API to verify and authenticate
+      await ApiCalls.googleSignIn(idToken: idToken);
+    } catch (error) {
+      print(error);
+    }
   }
 }

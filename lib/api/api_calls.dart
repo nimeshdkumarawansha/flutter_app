@@ -82,6 +82,16 @@ class ApiCalls {
     return response;
   }
 
+  static Future<Response> googleSignIn({required String idToken}) async {
+    final response = await post(
+      Uri.parse('${baseUrl}auth/google'),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'id_token': idToken}),
+    );
+
+    return response;
+  }
+
   static Future<Response> getActiveWarehouse() async {
     var url = Uri.parse("${baseUrl}user/active/warehouse");
     var headers = await _headerWithToken();

@@ -117,7 +117,7 @@ class _RegisterState extends State<Register> {
               // logo
               SizedBox(
                 height: 100,
-                child: Image.asset('assets/logo.png'),
+                child: Image.asset('assets/images/logo/logo.png'),
               ),
               const SizedBox(height: 75),
 

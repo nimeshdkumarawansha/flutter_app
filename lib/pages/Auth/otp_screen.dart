@@ -24,7 +24,7 @@ class _OTPScreenState extends State<OTPScreen> {
           children: <Widget>[
             SizedBox(
               height: 80,
-              child: Image.asset('assets/logo.png'),
+              child: Image.asset('assets/images/logo/logo.png'),
             ),
             const SizedBox(height: 50),
             const Text(

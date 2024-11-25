@@ -18,8 +18,8 @@ class CustomSearchBar extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(8.0),
-                    bottomLeft: Radius.circular(8.0),
+                    topLeft: Radius.circular(6.0),
+                    bottomLeft: Radius.circular(6.0),
                   )),
               child: Row(
                 children: [
@@ -78,12 +78,12 @@ class CustomSearchBar extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topRight: Radius.circular(8),
-                bottomRight: Radius.circular(8),
+                topRight: Radius.circular(6.0),
+                bottomRight: Radius.circular(6.0),
               ),
             ),
             child: IconButton(
-              icon: const Icon(Icons.search, color: Colors.green),
+              icon: const Icon(Icons.search, color: kGreenColor),
               onPressed: () {
                 // Handle search action
               },

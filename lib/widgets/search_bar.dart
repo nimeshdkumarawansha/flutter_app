@@ -28,7 +28,8 @@ class CustomSearchBar extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Search in TaD',
-                        hintStyle: const TextStyle(color: Colors.grey),
+                        hintStyle: const TextStyle(
+                            color: Color.fromARGB(255, 37, 37, 37)),
                         border: InputBorder.none,
                         contentPadding:
                             const EdgeInsets.symmetric(horizontal: 8),
@@ -37,9 +38,9 @@ class CustomSearchBar extends StatelessWidget {
                   ),
                   // Vertical Divider
                   Container(
-                    height: 24,
+                    height: 40,
                     width: 1,
-                    color: Colors.grey.shade300,
+                    color: const Color.fromARGB(255, 1, 1, 1),
                   ),
                   // Dropdown
                   Padding(

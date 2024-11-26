@@ -69,7 +69,7 @@ flutter:
     - assets/images/logo/
     - assets/images/onboarding/
     - assets/images/store/
-    - assets/fonts
+    # - assets/fonts
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -93,9 +93,9 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
-   fonts:
-    - family: Gilroy
-      fonts:
-        - asset: assets/fonts/Gilroy-Heavy.ttf
+  #  fonts:
+  #   - family: Gilroy
+  #     fonts:
+  #       - asset: assets/fonts/Gilroy-Heavy.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

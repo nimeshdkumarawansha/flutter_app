@@ -38,6 +38,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   context,
                   icon: Icons.person,
                   text: 'My Profile',
+                  iconColor: const Color.fromARGB(0, 6, 0, 0),
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
@@ -50,6 +51,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   context,
                   icon: Icons.home,
                   text: 'Home Page',
+                  iconColor: const Color.fromARGB(0, 6, 0, 0),
                   onTap: () {
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => const Home()));
@@ -59,6 +61,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   context,
                   icon: Icons.login,
                   text: 'Authorized Member Login',
+                  iconColor: const Color.fromARGB(0, 6, 0, 0),
                   onTap: () {
                     Navigator.of(context).pop();
                   },
@@ -109,6 +112,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: kBlackColor,
+      automaticallyImplyLeading: false, // Disable the back arrow
       title: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(

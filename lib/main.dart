@@ -7,7 +7,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final press = await SharedPreferences.getInstance();
   final onBoarding = press.getBool("onBoarding") ?? false;
-  runApp(MyApp(onBoarding: onBoarding,));
+  runApp(MyApp(
+    onBoarding: onBoarding,
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: 'Gilroy',
       ),
       home: onBoarding ? const Home() : OnBoardingView(),
     );

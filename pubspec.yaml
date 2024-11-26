@@ -39,6 +39,7 @@ dependencies:
   shared_preferences: ^2.2.3
   http: ^1.2.2
   google_sign_in: ^6.2.2
+  font_awesome_flutter: ^10.5.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,7 @@ flutter:
     - assets/images/logo/
     - assets/images/onboarding/
     - assets/images/store/
+    - assets/fonts
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -91,5 +93,9 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+   fonts:
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-Heavy.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

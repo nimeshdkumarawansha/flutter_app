@@ -46,8 +46,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox(
-                        width: 16),
+                      const SizedBox(width: 16),
                       GestureDetector(
                         onTap: _hideDropdown,
                         child: Row(
@@ -60,24 +59,27 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                     ],
                   ),
                 ),
-                Divider(height: 1),
                 ...categories
-                    .map((category) => Column(
-                          children: [
-                            ListTile(
-                              title: Text(
-                                category,
-                                style: TextStyle(fontSize: 16),
+                    .map((category) => Padding(
+                          padding:
+                              const EdgeInsets.only(left: 40.0, right: 40.0),
+                          child: Column(
+                            children: [
+                              ListTile(
+                                title: Text(
+                                  category,
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                                onTap: () {
+                                  setState(() {
+                                    selectedCategory = category;
+                                  });
+                                  _hideDropdown();
+                                },
                               ),
-                              onTap: () {
-                                setState(() {
-                                  selectedCategory = category;
-                                });
-                                _hideDropdown();
-                              },
-                            ),
-                            Divider(height: 1),
-                          ],
+                              Divider(height: 1),
+                            ],
+                          ),
                         ))
                     .toList(),
               ],

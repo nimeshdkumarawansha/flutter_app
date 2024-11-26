@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/color.dart';
-import 'store_card.dart';
+import '../components/store_card.dart';
 
 class StoreList extends StatelessWidget {
   const StoreList({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../components/color.dart';
+import 'color.dart';
 
 class StoreCard extends StatelessWidget {
   final String imagePath;

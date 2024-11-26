@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/home.dart';
 
 import '../components/color.dart';
+import '../pages/Auth/login.dart';
 import '../pages/profile_screen.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -22,8 +23,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             height: MediaQuery.of(context).size.height * 0.36,
             margin: EdgeInsets.only(
                 bottom: MediaQuery.of(context).size.height * 0.3),
-            decoration:
-                const BoxDecoration(color: Color(0xFF333333)), // kGrayColor
+            decoration: const BoxDecoration(
+                color: Color(0xFF333333),
+                borderRadius:
+                    BorderRadius.all(Radius.circular(20))), // kGrayColor
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -63,7 +66,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   text: 'Authorized Member Login',
                   iconColor: const Color.fromARGB(0, 6, 0, 0),
                   onTap: () {
-                    Navigator.of(context).pop();
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Login(),
+                        ));
                   },
                 ),
                 _buildMenuItem(

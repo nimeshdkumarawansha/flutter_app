@@ -14,13 +14,13 @@ class StoreList extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           children: const [
             StoreCard(
-              imagePath: 'assets/images/store/tad_store.jpeg',
+              imagePath: 'assets/images/store/tad_store.png',
               storeText: 'Browse items by Store',
               buttonText: 'See All',
               storeLogo: 'assets/images/logo/logo-b.png',
             ),
             StoreCard(
-              imagePath: 'assets/images/store/fashanbug.jpeg',
+              imagePath: 'assets/images/store/fashanbug.png',
               storeText: 'Browse items by Store',
               buttonText: 'See All',
               storeLogo: 'assets/images/store/odel-logo.png',

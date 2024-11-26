@@ -4,14 +4,16 @@ import '../components/color.dart';
 
 class StoreCard extends StatelessWidget {
   final String imagePath;
-  final String storeName;
+  final String storeText;
   final String buttonText;
+  final String storeLogo;
 
   const StoreCard({
     super.key,
     required this.imagePath,
-    required this.storeName,
+    required this.storeText,
     required this.buttonText,
+    required this.storeLogo,
   });
 
   @override
@@ -19,7 +21,7 @@ class StoreCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 16.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        // color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: [
           BoxShadow(
@@ -43,39 +45,63 @@ class StoreCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  storeName,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+            padding: const EdgeInsets.only(
+              top: 8.0,
+              bottom: 2.0,
+            ),
+            child: Container(
+              padding: const EdgeInsets.only(right: 4.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8.0), // Add border radius
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // store logo
+                  // ClipRRect(
+                  //   child: Image.asset(
+                  //     storeLogo,
+                  //     height: 17,
+                  //     fit: BoxFit.cover,
+                  //   ),
+                  // ),
+                  SizedBox(
+                    width: 50,
                   ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    // TODO: Implement store navigation
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: kGreenColor,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6.0),
-                    ),
-                  ),
-                  child: Text(
-                    buttonText,
+                  // store name
+                  Text(
+                    storeText,
                     style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
-              ],
+
+                  // button
+                  TextButton(
+                    onPressed: () {
+                      // TODO: Implement store navigation
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: kGreenColor,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6.0),
+                      ),
+                    ),
+                    child: Text(
+                      buttonText,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

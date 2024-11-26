@@ -19,7 +19,7 @@ class StoreCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 16.0),
+      margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
         // color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
@@ -36,8 +36,7 @@ class StoreCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ClipRRect(
-            borderRadius:
-                const BorderRadius.vertical(top: Radius.circular(8.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(4.0)),
             child: Image.asset(
               imagePath,
               height: 150,

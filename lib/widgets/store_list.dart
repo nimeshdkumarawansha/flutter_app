@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/components/color.dart';
 import 'store_card.dart';
 
 class StoreList extends StatelessWidget {
@@ -8,21 +9,15 @@ class StoreList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: const Color.fromARGB(255, 211, 211, 211),
+        color: kGrayColor,
         child: ListView(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           children: const [
             StoreCard(
               imagePath: 'assets/images/store/tad_store.jpeg',
               storeText: 'Browse items by Store',
               buttonText: 'See All',
               storeLogo: 'assets/images/logo/logo-b.png',
-            ),
-            StoreCard(
-              imagePath: 'assets/images/store/fashanbug.jpeg',
-              storeText: 'Browse items by Store',
-              buttonText: 'See All',
-              storeLogo: 'assets/images/store/fashanbug-logo.png',
             ),
             StoreCard(
               imagePath: 'assets/images/store/fashanbug.jpeg',

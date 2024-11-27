@@ -20,9 +20,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           insetPadding: EdgeInsets.zero,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.36,
+            height: MediaQuery.of(context).size.height * 0.4,
             margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.3),
+                bottom: MediaQuery.of(context).size.height * 0.25),
             decoration: const BoxDecoration(
                 color: Color(0xFF333333),
                 borderRadius:
